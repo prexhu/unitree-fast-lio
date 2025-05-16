@@ -1,7 +1,8 @@
 <launch>
 	<!-- Launch file for Velodyne16 VLP-16 LiDAR -->
-
-	<arg name="rviz" default="true" />
+<include file="$(find unitree_lidar_ros)/launch/run_without_rviz.launch" />
+	<arg name="rviz"
+		default="true" />
 
 	<!--node
 	pkg="point_lio_unilidar" type="pointlio_mapping" name="laserMapping" output="screen"-->
@@ -39,7 +40,7 @@
 		name="runtime_pos_log_enable" type="bool" value="0" /> <!--1-->
 	<node pkg="fast_lio"
 		type="fastlio_mapping"
-		name="laserMapping" output="screen"/>
+		name="laserMapping" output="screen" />
 
 	<group
 		if="$(arg rviz)">
